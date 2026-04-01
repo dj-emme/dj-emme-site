@@ -182,7 +182,7 @@ a:hover{ text-decoration: none; }
 
 /* TITOLO: togli qualsiasi margine che può aumentare la distanza */
 .manifesto-title{
-  margin: 0;                      /* zero margini */
+  margin-top: -40px;                      /* zero margini */
   line-height: 0.95;              /* compatta leggermente */
 }
 
