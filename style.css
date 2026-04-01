@@ -294,3 +294,21 @@ body{
     padding-top: 104px;
   }
 }
+.nav-links a{
+  position: relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 1px;
+  background: rgba(0,180,255,0.0);
+  transition: background .18s ease;
+}
+
+.nav-links a:hover::after{
+  background: rgba(0,180,255,0.35);
+}
