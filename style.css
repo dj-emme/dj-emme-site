@@ -1,13 +1,8 @@
 :root{
   --bg: #050608;
-  --panel: rgba(255,255,255,0.03);
-  --border: rgba(255,255,255,0.10);
   --text: rgba(255,255,255,0.92);
   --muted: rgba(255,255,255,0.65);
   --accent: #00B4FF;
-  --accent2: #2B5CFF;
-  --shadow: 0 20px 80px rgba(0,0,0,0.65);
-  --radius: 18px;
 
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-title: "Orbitron", system-ui, sans-serif;
@@ -26,108 +21,75 @@ body{
   line-height: 1.6;
 }
 
-/* grain leggero (industrial) */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-  opacity: .45;
-}
-
-a{ color: var(--text); text-decoration: none; }
-a:hover{ text-decoration: none; }
-
 /* ==========================
-   MANIFESTO HOME (logo sopra)
+   MANIFESTO HOME
    ========================== */
 
 #manifesto{
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
-  background: #050608;
-  overflow: hidden;
-  padding: 24px 20px 80px;
-  padding-top: 10px
+  padding: 12px 20px 90px;
 }
 
 .manifesto-inner{
-  position: relative;
-  z-index: 1;
+  margin-top: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0px;    
+  gap: 0;
   max-width: 92vw;
 }
 
-/* LOGO: grande come watermark ma SOPRA al titolo + dissolvenza + animazione */
+/* LOGO */
 .manifesto-logo{
   width: min(980px, 92vw);
   height: auto;
   display:block;
-  margin: 0 auto 10px auto;
-  margin-bottom: -28px;
+  margin: 0 auto -48px auto;   /* << LOGO VICINO ALLA SCRITTA */
+  opacity: 0.22;
 
-  /* dissolvenza (ghost) */
-  opacity: 0.18;
-
-  /* glow techno leggero */
   filter:
     blur(0.25px)
-    drop-shadow(0 0 22px rgba(0,180,255,0.18))
-    drop-shadow(0 0 70px rgba(43,92,255,0.12));
+    drop-shadow(0 0 24px rgba(0,180,255,0.22))
+    drop-shadow(0 0 90px rgba(43,92,255,0.16));
 
-  /* animazione elegante: fade-in + breathing leggerissimo */
   animation:
     logoFadeIn 900ms ease-out both,
     logoBreath 5.5s ease-in-out 1.1s infinite;
 }
 
-/* Fade-in iniziale */
-@keyframes logoFadeIn{
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 0.18; transform: translateY(0); }
-}
-
-/* “Respiro” quasi impercettibile (molto pro, non tamarro) */
-@keyframes logoBreath{
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%      { transform: translateY(0) scale(1.012); }
-}
-
+/* TITOLO */
 .manifesto-title{
   font-family: var(--font-title);
   font-size: clamp(3.5rem, 10vw, 9rem);
   letter-spacing: 0.15em;
   font-weight: 800;
-  line-height: 1;
-  margin-top: 0;
+  line-height: 0.95;
+  margin: 0;
 }
 
+/* SOTTOTITOLO */
 .manifesto-subtitle{
-  margin-top: 10px;
-  font-family: var(--font-body);
+  margin-top: 14px;
   font-size: clamp(1rem, 2.5vw, 1.4rem);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   opacity: 0.75;
 }
 
+/* META */
 .manifesto-meta{
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 0.75rem;
   letter-spacing: 0.4em;
   opacity: 0.4;
 }
 
+/* SCROLL */
 .manifesto-scroll{
   position: absolute;
   bottom: 18px;
@@ -135,65 +97,37 @@ a:hover{ text-decoration: none; }
   transform: translateX(-50%);
   font-size: 0.7rem;
   letter-spacing: 0.45em;
-  opacity: 0.30;
+  opacity: 0.3;
 }
 
-/* Accessibilità: rispetta “riduci animazioni” */
-@media (prefers-reduced-motion: reduce){
+/* ==========================
+   ANIMAZIONI
+   ========================== */
+
+@keyframes logoFadeIn{
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 0.22; transform: translateY(0); }
+}
+
+@keyframes logoBreath{
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.012); }
+}
+
+/* ==========================
+   RESPONSIVE FIX
+   ========================== */
+
+@media (max-width: 768px){
+  .manifesto-inner{ margin-top: 24px; }
+
   .manifesto-logo{
-    animation: none;
+    margin-bottom: -20px;
+    opacity: 0.18;
   }
 }
-.btnBack{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.04);
-  color: var(--text);
-  letter-spacing: .25em;
-  font-family: var(--font-title);
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
-}
-.btnBack:hover{
-  transform: translateY(-2px);
-  border-color: rgba(0,180,255,0.45);
-  background: rgba(0,180,255,0.08);
-}
-/* FIX: avvicina logo e titolo nel manifesto */
-#manifesto{
-  padding: 18px 20px 95px;        /* meno spazio sopra, più sotto per SCROLL */
-}
 
-.manifesto-inner{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;    /* evita “centrature” che aumentano il vuoto percepito */
-  gap: 0;                         /* niente gap automatico tra elementi */
-}
-
-/* LOGO: riduci spazio sotto e “tira su” leggermente il titolo */
-.manifesto-logo{
-  margin: 0 auto -60px auto;      /* <<< CHIAVE: negativo per avvicinare al titolo */
-  width: min(980px, 92vw);
-  opacity: 0.18;
-}
-
-/* TITOLO: togli qualsiasi margine che può aumentare la distanza */
-.manifesto-title{
-  margin-top: -80px;                      /* zero margini */
-  line-height: 0.95;              /* compatta leggermente */
-}
-
-/* Ricalibra sottotitolo/meta (più vicino e pulito) */
-.manifesto-subtitle{ margin-top: 10px; }
-.manifesto-meta{ margin-top: 6px; }
-
-/* SCROLL: più in basso e più distante dal contenuto */
-.manifesto-scroll{
-  bottom: 18px;
-  opacity: 0.28;
+/* accessibilità */
+@media (prefers-reduced-motion: reduce){
+  .manifesto-logo{ animation:none; }
 }
