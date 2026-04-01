@@ -175,7 +175,7 @@ a:hover{ text-decoration: none; }
 
 /* LOGO: riduci spazio sotto e “tira su” leggermente il titolo */
 .manifesto-logo{
-  margin: 0 auto -14px auto;      /* <<< CHIAVE: negativo per avvicinare al titolo */
+  margin: 0 auto -22px auto;      /* <<< CHIAVE: negativo per avvicinare al titolo */
   width: min(980px, 92vw);
   opacity: 0.18;
 }
