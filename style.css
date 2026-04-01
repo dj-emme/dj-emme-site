@@ -312,3 +312,87 @@ body{
 .nav-links a:hover::after{
   background: rgba(0,180,255,0.35);
 }
+/* ==========================
+   NAV SERIA / EDITORIALE
+   ========================== */
+
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: #050608;
+}
+
+.nav::after{
+  content:"";
+  display:block;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-inner{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.nav-brand{
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.nav-links{
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a{
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  transition: opacity .15s ease;
+}
+
+.nav-links a:hover{
+  opacity: 1;
+}
+
+/* Offset manifesto (il menu NON deve coprire il contenuto) */
+#manifesto{
+  padding-top: 104px;
+}
+
+/* ==========================
+   MOBILE (stesso linguaggio)
+   ========================== */
+
+@media (max-width: 768px){
+  .nav-inner{
+    padding: 18px 16px;
+  }
+
+  .nav-links{
+    gap: 18px;
+  }
+
+  .nav-links a{
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+  }
+
+  #manifesto{
+    padding-top: 116px;
+  }
+}
