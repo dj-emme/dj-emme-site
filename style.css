@@ -460,3 +460,97 @@ body{
   opacity: 1;
   color: #ff0033;
 }
+/* HERO SECTION HARDTECHNO */
+
+#manifesto {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.manifesto-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.manifesto-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 80px;
+  letter-spacing: 5px;
+  margin: 0;
+  position: relative;
+}
+
+/* Glitch effect base */
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.glitch:before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch:after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitchBottom 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0%, 20%, 40%, 60%, 80%, 100% { clip: rect(0, 900px, 0, 0); }
+  10% { clip: rect(5px, 900px, 20px, 0); }
+  30% { clip: rect(25px, 900px, 45px, 0); }
+  50% { clip: rect(45px, 900px, 65px, 0); }
+  70% { clip: rect(65px, 900px, 85px, 0); }
+  90% { clip: rect(85px, 900px, 105px, 0); }
+}
+
+@keyframes glitchBottom {
+  0%, 20%, 40%, 60%, 80%, 100% { clip: rect(0, 900px, 0, 0); }
+  10% { clip: rect(15px, 900px, 35px, 0); }
+  30% { clip: rect(35px, 900px, 55px, 0); }
+  50% { clip: rect(55px, 900px, 75px, 0); }
+  70% { clip: rect(75px, 900px, 95px, 0); }
+  90% { clip: rect(95px, 900px, 115px, 0); }
+}
+
+.manifesto-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  letter-spacing: 4px;
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+/* ENTER BUTTON */
+#enter-btn {
+  margin-top: 40px;
+  padding: 15px 30px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  background: none;
+  border: 2px solid #ff0033;
+  color: #ff0033;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+#enter-btn:hover {
+  background: #ff0033;
+  color: black;
+}
