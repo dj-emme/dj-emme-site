@@ -213,3 +213,84 @@ body{
     padding: 7px 10px;
   }
 }
+/* ==========================
+   SERIOUS NAV (editorial)
+   ========================== */
+
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: rgba(5, 6, 8, 0.86);
+}
+
+.nav::after{
+  content:"";
+  display:block;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.nav-brand{
+  font-family: var(--font-title);
+  font-size: 0.86rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.nav-links{
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a{
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  opacity: 0.70;
+  transition: opacity .18s ease;
+}
+
+.nav-links a:hover{
+  opacity: 1;
+}
+
+/* Offset: il nav non deve coprire il manifesto */
+#manifesto{
+  padding-top: 92px;
+}
+
+/* Mobile: ancora serio, senza hamburger (wrap pulito) */
+@media (max-width: 768px){
+  .nav-inner{
+    padding: 16px 16px;
+  }
+  .nav-links{
+    gap: 14px;
+  }
+  .nav-links a{
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+  }
+  #manifesto{
+    padding-top: 104px;
+  }
+}
