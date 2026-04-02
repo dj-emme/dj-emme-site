@@ -729,35 +729,43 @@ body{
   border-color: #00d9ff;
   box-shadow: 0 0 12px #00d9ff;
 }
-/* MOBILE FIX MENU */
+/* MOBILE CLEAN NAV */
 
 @media (max-width: 768px) {
 
   .nav {
-    top: 10px;
+    top: 0;
     left: 0;
     width: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
   }
 
   .nav-left {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .nav-btn {
     width: auto;
-    padding: 8px 10px;
+    padding: 6px 8px;
     font-size: 9px;
     letter-spacing: 1px;
+    border: none;
+    background: none;
+    opacity: 0.8;
+  }
+
+  .nav-btn:hover {
+    color: #00d9ff;
   }
 
 }
 @media (max-width: 768px) {
-  .hero-logo {
-    top: 40%;
-    width: 300px;
-    opacity: 0.1;
+  #manifesto {
+    padding-top: 80px;
   }
 }
