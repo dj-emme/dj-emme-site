@@ -1,9 +1,13 @@
-const intro = document.getElementById("intro");
+document.addEventListener("DOMContentLoaded", function () {
+  const intro = document.getElementById("intro");
 
-intro.addEventListener("click", () => {
-  intro.classList.add("fade-out");
+  if (intro) {
+    intro.addEventListener("click", function () {
+      intro.classList.add("fade-out");
 
-  setTimeout(() => {
-    intro.remove();
-  }, 800);
+      setTimeout(() => {
+        intro.remove();
+      }, 800);
+    });
+  }
 });
