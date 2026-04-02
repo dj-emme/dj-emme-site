@@ -37,3 +37,8 @@ setInterval(() => {
   }, 80);
 
 }, 3000);
+const intro = document.getElementById("intro");
+
+intro.addEventListener("click", () => {
+  intro.classList.add("fade-out");
+});
