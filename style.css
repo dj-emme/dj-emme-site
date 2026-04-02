@@ -562,3 +562,32 @@ body{
   background: #ff0033;
   color: black;
 }
+/* LOGO CENTRALE ENORME */
+
+.hero-logo {
+  position: absolute;
+  width: 500px;
+  opacity: 0.05;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: none;
+  animation: logoFade 6s ease-in-out infinite;
+}
+
+/* ANIMAZIONE DISSOLVENZA */
+
+@keyframes logoFade {
+  0% {
+    opacity: 0.03;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.08;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% {
+    opacity: 0.03;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
