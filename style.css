@@ -1,16 +1,14 @@
 :root{
-  --bg:#050608;
   --accent:#00d9ff;
-  --font-body:"Inter",sans-serif;
   --font-title:"Orbitron",sans-serif;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:var(--font-body);
-  background:#000;
+  background:black;
   color:white;
+  font-family:sans-serif;
 }
 
 /* INTRO */
@@ -22,7 +20,6 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
   z-index:9999;
   cursor:pointer;
 }
@@ -32,6 +29,10 @@ body{
   transition:0.8s;
 }
 
+.intro-inner{
+  text-align:center;
+}
+
 .intro-inner h1{
   font-family:var(--font-title);
   letter-spacing:5px;
@@ -39,10 +40,9 @@ body{
 
 .intro-inner p{
   opacity:0.6;
-  font-size:12px;
 }
 
-/* NAV */
+/* MENU */
 
 .nav{
   position:fixed;
@@ -62,18 +62,17 @@ body{
   padding:10px;
   text-align:center;
   border:1px solid rgba(255,255,255,0.2);
-  background:rgba(0,0,0,0.5);
   color:white;
   text-decoration:none;
   font-family:var(--font-title);
   font-size:11px;
   letter-spacing:2px;
-  transition:0.2s;
+  background:rgba(0,0,0,0.6);
 }
 
 .nav-btn:hover{
-  border-color:var(--accent);
   color:var(--accent);
+  border-color:var(--accent);
 }
 
 .nav-btn:active{
@@ -88,18 +87,17 @@ body{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
-  overflow:hidden;
+  position:relative;
 }
 
 .hero-logo{
   position:absolute;
-  width:400px;
+  width:420px;
   top:35%;
   left:50%;
   transform:translate(-50%,-50%);
   opacity:0.12;
-  animation:float 8s infinite;
+  animation:float 6s infinite;
 }
 
 @keyframes float{
@@ -109,39 +107,19 @@ body{
 
 .manifesto-title{
   font-family:var(--font-title);
-  font-size:80px;
+  font-size:70px;
   letter-spacing:5px;
 }
 
 .manifesto-subtitle{
   margin-top:15px;
   letter-spacing:4px;
-  opacity:0.8;
 }
 
 .manifesto-scroll{
   position:absolute;
   bottom:20px;
   opacity:0.4;
-}
-
-/* GLITCH */
-
-.glitch:before,
-.glitch:after{
-  content:attr(data-text);
-  position:absolute;
-  left:0;
-}
-
-.glitch:before{
-  color:red;
-  left:2px;
-}
-
-.glitch:after{
-  color:blue;
-  left:-2px;
 }
 
 /* SOCIAL */
@@ -158,7 +136,6 @@ body{
 .social-fixed img{
   width:24px;
   opacity:0.6;
-  transition:0.3s;
 }
 
 .social-fixed img:hover{
