@@ -776,3 +776,40 @@ body.kick {
   filter: brightness(1.1);
   transition: 0.1s;
 }
+/* INTRO SCREEN */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: white;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.intro-inner h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+.intro-inner p {
+  margin-top: 15px;
+  font-size: 12px;
+  opacity: 0.6;
+  letter-spacing: 3px;
+}
+
+/* FADE OUT */
+
+#intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
