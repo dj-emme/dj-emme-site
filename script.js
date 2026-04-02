@@ -42,3 +42,6 @@ const intro = document.getElementById("intro");
 intro.addEventListener("click", () => {
   intro.classList.add("fade-out");
 });
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
