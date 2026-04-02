@@ -450,7 +450,7 @@ body{
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background: #ff0033;
+  background: #00d9ff;
   transition: 0.3s;
 }
 
@@ -551,15 +551,15 @@ body{
   font-family: 'Orbitron', sans-serif;
   font-weight: 800;
   background: none;
-  border: 2px solid #ff0033;
-  color: #ff0033;
+  border: 2px solid #00d9ff;
+  color: #00d9ff;
   cursor: pointer;
   letter-spacing: 2px;
   transition: 0.3s;
 }
 
 #enter-btn:hover {
-  background: #ff0033;
+  background: #00d9ff;
   color: black;
 }
 /* LOGO CENTRALE ENORME */
@@ -638,21 +638,28 @@ body{
 .nav-left {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  align-items: flex-start; /* IMPORTANTISSIMO */
 }
 
 /* BOTTONI */
 
 .nav-btn {
   display: inline-block;
-  padding: 12px 18px;
+  width: 140px; /* dimensione fissa */
+  padding: 10px 15px;
+  text-align: center;
+
   font-family: 'Orbitron', sans-serif;
   font-size: 11px;
   letter-spacing: 2px;
+
   color: white;
   text-decoration: none;
+
   border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
+
   transition: all 0.15s ease;
   position: relative;
 }
@@ -660,15 +667,15 @@ body{
 /* HOVER */
 
 .nav-btn:hover {
-  border-color: #ff0033;
-  color: #ff0033;
+  border-color: #00d9ff;
+  color: #00d9ff;
 }
 
 /* PUSH EFFECT */
 
 .nav-btn:active {
   transform: translateY(3px) scale(0.98);
-  box-shadow: 0 0 10px #ff0033 inset;
+  box-shadow: 0 0 10px #00d9ff inset;
 }
 
 /* GLOW ACTIVE */
@@ -682,8 +689,8 @@ body{
 }
 
 .nav-btn:hover::after {
-  border-color: #ff0033;
-  box-shadow: 0 0 10px #ff0033;
+  border-color: #00d9ff;
+  box-shadow: 0 0 10px #00d9ff;
 }
 /* SOCIAL FIXED */
 
@@ -706,5 +713,19 @@ body{
 .social-fixed img:hover {
   opacity: 1;
   transform: scale(1.2);
-  filter: drop-shadow(0 0 5px #ff0033);
+  filter: drop-shadow(0 0 5px #00d9ff);
+}
+.nav-btn:hover {
+  border-color: #00d9ff;
+  color: #00d9ff;
+}
+
+.nav-btn:active {
+  transform: translateY(3px) scale(0.97);
+  box-shadow: 0 0 12px #00d9ff inset;
+}
+
+.nav-btn:hover::after {
+  border-color: #00d9ff;
+  box-shadow: 0 0 12px #00d9ff;
 }
