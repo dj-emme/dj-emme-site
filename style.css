@@ -769,3 +769,10 @@ body{
     padding-top: 80px;
   }
 }
+/* EFFETTO KICK */
+
+body.kick {
+  transform: scale(1.01);
+  filter: brightness(1.1);
+  transition: 0.1s;
+}
