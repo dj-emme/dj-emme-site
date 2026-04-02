@@ -626,3 +626,85 @@ body{
     opacity: 0.15;
   }
 }
+/* NAV HARDTECHNO BUTTONS */
+
+.nav {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* BOTTONI */
+
+.nav-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.6);
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+/* HOVER */
+
+.nav-btn:hover {
+  border-color: #ff0033;
+  color: #ff0033;
+}
+
+/* PUSH EFFECT */
+
+.nav-btn:active {
+  transform: translateY(3px) scale(0.98);
+  box-shadow: 0 0 10px #ff0033 inset;
+}
+
+/* GLOW ACTIVE */
+
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.nav-btn:hover::after {
+  border-color: #ff0033;
+  box-shadow: 0 0 10px #ff0033;
+}
+/* SOCIAL FIXED */
+
+.social-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.social-fixed img {
+  width: 24px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.social-fixed img:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px #ff0033);
+}
