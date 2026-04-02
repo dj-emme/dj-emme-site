@@ -15,3 +15,25 @@ setInterval(() => {
   }, 120);
 
 }, 700); // velocità del beat
+// GLITCH RANDOM
+
+const title = document.querySelector(".manifesto-title");
+
+setInterval(() => {
+  title.style.transform = "skew(" + (Math.random() * 10 - 5) + "deg)";
+
+  setTimeout(() => {
+    title.style.transform = "skew(0deg)";
+  }, 100);
+
+}, 2000);
+// SHAKE LEGGERO
+
+setInterval(() => {
+  document.body.style.transform = "translateX(" + (Math.random() * 4 - 2) + "px)";
+
+  setTimeout(() => {
+    document.body.style.transform = "translateX(0px)";
+  }, 80);
+
+}, 3000);
